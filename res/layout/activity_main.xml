@@ -1,16 +1,143 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.xmpush.MainActivity" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/set_alias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="设置别名"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/set_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="设置帐号"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/subscribe_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="订阅标签"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/unset_alias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="撤销别名"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/unset_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="撤销帐号"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/unsubscribe_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="撤销订阅"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/pause_push"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="暂停推送"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/resume_push"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="回复推送"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/set_accept_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/all_btn"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="设置时间"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </ScrollView>
+
+</LinearLayout>
