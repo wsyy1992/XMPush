@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.mipush.sdk.MiPushClient;
@@ -16,7 +17,7 @@ public class MyMessageReceiver extends PushMessageReceiver {
 	private long mResultCode = -1;
 	private String mReason;
 	private String mCommand;
-	private String mMessage;// 推送消摘要
+	private String mMessage;// 传输数据
 	private String mTopic;// 订阅主题
 	private String mAlias;// 别名
 	private String mUserAccount;// 帐号
@@ -32,13 +33,19 @@ public class MyMessageReceiver extends PushMessageReceiver {
 		// TODO Auto-generated method stub
 		super.onReceivePassThroughMessage(context, message);
 		mMessage = message.getContent();
+		System.out.println("mMessage" + mMessage);
+		String string = message.toString();
+		System.out.println("onReceivePassThroughMessage" + string);
 		if (!TextUtils.isEmpty(message.getTopic())) {
 			mTopic = message.getTopic();
+			System.out.println("mTopic" + mTopic);
 		} else if (!TextUtils.isEmpty(message.getAlias())) {
 			mAlias = message.getAlias();
+			System.out.println("mAlias" + mAlias);
 
 		} else if (!TextUtils.isEmpty(message.getUserAccount())) {
 			mUserAccount = message.getUserAccount();
+			System.out.println("mUserAccount" + mUserAccount);
 		}
 	}
 
@@ -51,6 +58,7 @@ public class MyMessageReceiver extends PushMessageReceiver {
 		// TODO Auto-generated method stub
 		super.onNotificationMessageClicked(context, message);
 		mMessage = message.getContent();
+		System.out.println("click");
 		if (!TextUtils.isEmpty(message.getTopic())) {
 			mTopic = message.getTopic();
 		} else if (!TextUtils.isEmpty(message.getAlias())) {
@@ -59,6 +67,9 @@ public class MyMessageReceiver extends PushMessageReceiver {
 		} else if (!TextUtils.isEmpty(message.getUserAccount())) {
 			mUserAccount = message.getUserAccount();
 		}
+		String string = message.toString();
+		System.out.println("onNotificationMessageClicked" + string+"/nmMessage"+mMessage);
+		
 	}
 
 	/**
@@ -78,6 +89,8 @@ public class MyMessageReceiver extends PushMessageReceiver {
 		} else if (!TextUtils.isEmpty(message.getUserAccount())) {
 			mUserAccount = message.getUserAccount();
 		}
+		String string = message.toString();
+		System.out.println("onNotificationMessageArrived" + string);
 	}
 
 	/**
@@ -119,6 +132,8 @@ public class MyMessageReceiver extends PushMessageReceiver {
 				mEndTime = cmdArg2;
 			}
 		}
+		String string = message.toString();
+		System.out.println("onCommandResult" + string);
 	}
 
 	/**
@@ -140,6 +155,8 @@ public class MyMessageReceiver extends PushMessageReceiver {
 				mRegId = cmdArg1;
 			}
 		}
+		String string = message.toString();
+		System.out.println("onReceiveRegisterResult" + string);
 
 	}
 
